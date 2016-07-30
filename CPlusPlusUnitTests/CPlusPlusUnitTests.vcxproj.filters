@@ -38,6 +38,9 @@
     <ClCompile Include="MockLoggerTest.cc">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="QueueTest.cc">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

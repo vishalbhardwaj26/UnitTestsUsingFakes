@@ -70,5 +70,23 @@ namespace SSGUnitTestProj
             Assert.AreEqual(ss.State, SessionState.eNone);
 
         }
+
+        [TestMethod]
+        [TestCategory("SHimsTests")]
+        public void TestUsingShims()
+        {
+            using (Microsoft.QualityTools.Testing.Fakes.ShimsContext.Create())
+            {
+                DateTime dt = new DateTime(2010, 11, 5);
+                System.Fakes.ShimDateTime.NowGet = () => { return dt; };
+
+                var fakeTime = DateTime.Now; // It is always DateTime(2010, 11, 5);
+                Assert.AreEqual(dt.Year, fakeTime.Year);
+                Assert.AreEqual(dt.Month, fakeTime.Month);
+                Assert.AreEqual(dt.Day, fakeTime.Day);
+                Console.WriteLine(fakeTime.ToShortDateString());
+            }
+
+        }
     }
 }

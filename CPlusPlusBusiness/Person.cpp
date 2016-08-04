@@ -5,6 +5,10 @@ void Person::PrintInfo()
 {
 	//Business logic
 	//
+
+	if (_logger->LogFileSize() > 200)
+		return;
+
 	std::string str = _strName + std::to_string(_nAge);
 	_logger->LogMessage(str);
 }

@@ -13,6 +13,9 @@ public:
 	{}
 	MOCK_METHOD1(LogMessage, void(std::string message));
 	MOCK_METHOD1(LogInteger, void(int message));
+	MOCK_METHOD0(LogFileSize, int());
+
+	
 	
 	~MockLogger()
 	{

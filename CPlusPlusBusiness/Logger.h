@@ -12,6 +12,10 @@ public:
 	{}
 	virtual void LogInteger(int nMessage)
 	{}
+	virtual int LogFileSize()
+	{
+		return 0;
+	}
 
 private:
 
